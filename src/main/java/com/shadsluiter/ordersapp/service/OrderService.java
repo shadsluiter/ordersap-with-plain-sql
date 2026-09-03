@@ -66,7 +66,7 @@ public class OrderService {
 
     public void save(OrderModel order) { 
         OrderEntity orderEntity = convertToEntity(order);
-        orderRepository.update(orderEntity); 
+        orderRepository.save(orderEntity); 
     }
 
     public void delete(String id) {
@@ -76,7 +76,7 @@ public class OrderService {
     public void updateOrder(String id, OrderModel order) {
         OrderEntity orderEntity = convertToEntity(order);
         orderEntity.setId(Long.valueOf(id)); 
-        orderRepository.save(orderEntity);
+        orderRepository.update(orderEntity);
     }
 
     public OrderModel findById(String id) {
